@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Crypto Currency Api</title>
+  </head>
+  <body>
+    <main>
+      <div id="container" class="col-md-8 text-center h-100 mt-5">
+        <h2 class="mt-2">Crypto Currency</h2>
+        <div id="show-message"></div>
+        <div class="row mt-2">
+          <img src="img/dogecoin-doge-logo.svg" />
+          <img src="img/litecoin-ltc-logo.svg" />
+          <img src="img/tether-usdt-logo.svg" />
+          <img src="img/chainlink-link-logo.svg" />
+          <img src="img/cardano-ada-logo.svg" />
+          <img src="img/ethereum-eth-logo.svg" />
+          <img src="img/bitcoin-btc-logo.svg" />
+          <img src="img/binance-coin-bnb-logo.svg" />
+          <img src="img/polkadot-new-dot-logo.svg" />
+          <img src="img/xrp-xrp-logo.svg" />
+          <img src="img/filecoin-fil-logo.svg" />
+          <img src="img/tron-trx-logo.svg" />
+          <img src="img/monero-xmr-logo.svg" />
+          
+        </div>
+        <form id="form" class="mt-4 p-5">
+          <select id="Currency" class="w-75 mt-3 p-1">
+            <option value="">Select Currency</option>
+            <option value="BTC">Bitcoin</option>
+            <option value="ETH">Ethereum</option>
+            <option value="BNB">BinanceCoin</option>
+            <option value="XRP">Ripple</option>
+            <option value="USDT">Tether</option>
+            <option value="ADA">Cardano</option>
+            <option value="DOT">Polkadot</option>
+            <option value="DOGE">DogeCoin</option>
+            <option value="LINK">ChainLink</option>
+            <option value="LTC">Litecoin</option>
+            <option value="FIL">Filecoin</option>
+            <option value="TRX">Tron</option>
+            <option value="XMR">Monero</option>
+          </select>
+          <select id="days" class="w-75 mt-3 p-1">
+            <option value="">Changes to...</option>
+            <option value="1d">Yesterday</option>
+            <option value="7d">Last Week</option>
+            <option value="30d">Last Month</option>
+            <option value="365d">Last Year</option>
+          </select>
+
+          <select id="price" class="w-75 mt-3 p-1">
+            <option value="">Price</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+          </select>
+
+          <a id="submit" type="submit" class="btn btn-primary w-75 mt-3"
+            >Submit</a
+          >
+        </form>
+      </div>
+      <div id="result" class="col-md-8 mt-5"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="HTML.js"></script>
+    <script src="Currency.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

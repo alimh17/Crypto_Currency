@@ -15,21 +15,14 @@ class HTML {
     }, 3000);
   }
 
+  DipalyResult(data, price) {
+    let result = document.querySelector("#result");
 
-
-
-
-
-
-  DipalyResult(data, day, price) {
     if (price === "USD") {
       price = "$";
     } else {
       price = "€";
     }
-
-
-
 
     const div = document.createElement("div");
 
@@ -38,14 +31,12 @@ class HTML {
     div.innerHTML = `
         <img src=${data.logo_url} class="img">
         <p class="mt-2">price : <span>${data.price} ${price}</span></p>
+        <canvas id="myChart"></canvas>
         `;
 
-
-
-
-    const myChart = document.createElement("canvas").getContext("2d");
-    myChart.id = "chart"
-    let barChart = new Chart(myChart, {
+    let canvas = document.createElement("canvas");
+    let ctx = canvas.getContext("2d");
+    let barChart = new Chart(ctx, {
       type: "bar",
 
       data: {
@@ -83,30 +74,11 @@ class HTML {
       },
     });
 
+    let res = document.createElement("div").appendChild(div);
+    res.appendChild(canvas);
 
-    setInterval(() => {
-      document.querySelector("#result").appendChild(div);
-      // document.querySelector("#chart").appendChild(barChart);
-      // document.querySelector("#result").appendChild(myChart);
-      // this.ChangeResult(lineChart);
+    setTimeout(() => {
+      result.insertBefore(res, result.firstChild);
     }, 5000);
   }
-
-  // ChangeResult(lineChart) {
-  //   document.querySelector("#Currency").onchange = () => {
-  //     let res = document.querySelector("#result");
-
-  //     while (res.children[0]) {
-  //       res.children[0].remove();
-  //       // lineChart.remove()
-  //       break;
-  //     }
-  //   };
-  //   document.querySelector("#price").onchange = () => {
-  //     console.log("by");
-  //   };
-
-    // console.log(Currency)
-    // console.log(price)
-  // }
 }

@@ -3,11 +3,9 @@
 const html = new HTML();
 const currency = new Currency();
 
-
 //variabels
 
 const sppiner = document.querySelector("#sppiner");
-
 
 //eventListeners
 
@@ -21,10 +19,8 @@ function Listener() {
 
 function ShowResult() {
   const Currency = document.querySelector("#Currency").value;
-  const day = document.querySelector("#days").value;
   const price = document.querySelector("#price").value;
 
-  // || day === ""
 
   if (Currency === "" || price === "") {
     html.DisplayError(
@@ -33,15 +29,13 @@ function ShowResult() {
     );
   } else {
     currency
-      .DisplayResult(Currency, day, price)
-      .then((data) => html.DipalyResult(data[0], day, price));
+      .DisplayResult(Currency, price)
+      .then((data) => html.DipalyResult(data[0],  price));
     sppiner.style.display = "block";
 
-    setInterval(() => {
+    setTimeout(() => {
       sppiner.style.display = "none";
-
     }, 5000);
 
-    // 
   }
 }

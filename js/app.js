@@ -3,6 +3,12 @@
 const html = new HTML();
 const currency = new Currency();
 
+
+//variabels
+
+const sppiner = document.querySelector("#sppiner");
+
+
 //eventListeners
 
 Listener();
@@ -18,7 +24,9 @@ function ShowResult() {
   const day = document.querySelector("#days").value;
   const price = document.querySelector("#price").value;
 
-  if (Currency === "" || day === "" || price === "") {
+  // || day === ""
+
+  if (Currency === "" || price === "") {
     html.DisplayError(
       "Please enter all field",
       "alert , alert-warning text-center"
@@ -26,6 +34,14 @@ function ShowResult() {
   } else {
     currency
       .DisplayResult(Currency, day, price)
-      .then((data) => html.DipalyResult(data[0] , day , price))
+      .then((data) => html.DipalyResult(data[0], day, price));
+    sppiner.style.display = "block";
+
+    setInterval(() => {
+      sppiner.style.display = "none";
+
+    }, 5000);
+
+    // 
   }
 }

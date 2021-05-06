@@ -10,9 +10,12 @@ class Currency {
 
     URL += `ids=${Currency}&`;
 
-    URL += `interval=${days}&`;
+    // URL += `interval=${days}&`;
 
     URL += `convert=${price}`;
+
+
+    // console.log(URL)
 
 
 
